@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+<!--    <fragment-->
+<!--        android:id="@+id/main_fragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--        app:defaultNavHost="true"-->
+<!--        app:navGraph='@navigation/bottom_navigation'-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:layout_above="@+id/bottom_bar"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_bar"
+        />
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/bottom_bar"
+        android:background="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:abb_selectedTabType="text"
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorMargin="16dp"
+        app:abb_indicatorHeight="4dp"
+        app:abb_textStyle="bold"
+        app:abb_indicatorAnimation="slide"
+        app:abb_indicatorColor="@color/app_color"
+        app:abb_tabAnimationSelected="slide"
+        android:backgroundTint="@color/black"
+        app:abb_badgeTextColor="@color/white"
+        app:abb_tabColor="@color/white"
+        app:abb_tabColorSelected="@color/app_color"
+        android:layout_alignParentBottom="true"
+        app:abb_tabs="@menu/menu_bottom"
+        app:abb_selectedIndex="0" />
+
+</RelativeLayout>

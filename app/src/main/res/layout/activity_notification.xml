@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/second_color"
+    android:orientation="vertical"
+    tools:context=".notification.NotificationActivity">
+
+
+    <include
+        android:id="@+id/back_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        layout="@layout/back_layout"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="3dp"
+        android:layout_marginVertical="5dp"
+        android:visibility="visible"
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/notification_layout" />
+
+
+</LinearLayout>

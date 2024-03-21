@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/second_color"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center|top"
+    android:padding="20dp"
+    tools:context=".start.fotgot_verification.EmailVerifySendActivity">
+
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="start"
+        android:src="@drawable/back_image"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/phone_verify_image"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:layout_marginTop="50dp"
+        android:text="Forgot Password"
+        android:textColor="@color/app_color"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:text="@string/fotgot_send_content"
+        android:textColor="@color/white"
+        />
+
+
+    <EditText
+        android:id="@+id/ed_fullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@drawable/edit_grey_background"
+        android:layout_marginTop="20dp"
+        android:hint="Enter Email Address"
+        android:textSize="12sp"
+        android:textColorHint="@color/light_grey"
+        android:singleLine="true"
+        android:drawableStart="@drawable/ic_email"
+        android:imeOptions="actionNext"
+        android:fontFamily="@font/poppins"
+        android:drawablePadding="10dp"
+        android:textColor="@color/white"
+        android:paddingStart="20dp"
+        />
+
+    <Button
+        android:id="@+id/open_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="40dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Send me email"
+        android:textColor="@color/white"
+        />
+
+</LinearLayout>

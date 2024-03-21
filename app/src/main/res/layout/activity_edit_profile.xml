@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/second_color"
+    tools:context=".profile.EditProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <include
+           android:id="@+id/back_layout"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            layout="@layout/back_layout"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/profile_image"
+            android:layout_marginTop="20dp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:text="Name"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/edit_grey_background"
+                android:layout_marginTop="5dp"
+                android:hint="Name"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_grey"
+                android:paddingLeft="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:text="Email"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/edit_grey_background"
+                android:layout_marginTop="5dp"
+                android:hint="Email"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_grey"
+                android:paddingLeft="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:text="Password"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/edit_grey_background"
+                android:layout_marginTop="5dp"
+                android:hint="Passsword"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_grey"
+                android:paddingLeft="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:text="Mobile Number"
+                android:textColor="@color/white"
+                />
+
+            <EditText
+                android:id="@+id/ed_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/edit_grey_background"
+                android:layout_marginTop="5dp"
+                android:hint="Mobile Number"
+                android:textSize="12sp"
+                android:inputType="number"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_grey"
+                android:paddingLeft="10dp"
+                />
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                >
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:indeterminateTint="@color/app_color"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/update_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Save Changes"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:textColor="@color/white"
+                    />
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

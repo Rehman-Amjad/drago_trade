@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/second_color"
+    android:padding="20dp"
+    android:orientation="vertical"
+    tools:context=".bottomFragment.HomeFragment">
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       >
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           >
+
+           <ImageView
+               android:id="@+id/logo"
+               android:layout_width="25dp"
+               android:layout_height="25dp"
+               android:src="@drawable/logo"
+               />
+
+           <TextView
+               android:id="@+id/text"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="16sp"
+               android:textColor="@color/app_color"
+               android:textAlignment="textStart"
+               android:fontFamily="@font/poppins_bold"
+               android:text="Drago Trade"
+               android:layout_toRightOf="@+id/logo"
+               android:layout_marginLeft="10dp"
+               android:layout_toLeftOf="@+id/support_image"
+               />
+
+           <ImageView
+               android:id="@+id/support_image"
+               android:layout_width="25dp"
+               android:layout_height="25dp"
+               android:src="@drawable/ic_support"
+               android:layout_toLeftOf="@+id/notification_image"
+               android:layout_marginRight="20dp"
+               />
+
+
+           <ImageView
+               android:id="@+id/notification_image"
+               android:layout_width="25dp"
+               android:layout_height="25dp"
+               android:src="@drawable/ic_notification"
+               android:layout_alignParentRight="true"
+               app:tint="@color/white" />
+
+
+       </RelativeLayout>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="16sp"
+           android:textColor="@color/white"
+           android:textAlignment="textStart"
+           android:fontFamily="@font/poppins_medium"
+           android:layout_marginTop="10dp"
+           android:text="Total Balance (USD)"
+           />
+
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:weightSum="2"
+         android:layout_gravity="center"
+           android:gravity="center"
+           >
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="20sp"
+               android:textColor="@color/white"
+               android:textAlignment="textStart"
+               android:fontFamily="@font/poppins_medium"
+               android:layout_weight="2"
+               android:text="$ 0"
+               />
+
+           <Button
+               android:id="@+id/deposit_button"
+               android:layout_width="100dp"
+               android:layout_height="40dp"
+               android:layout_alignParentBottom="true"
+               android:background="@drawable/button_background"
+               android:textAllCaps="false"
+               android:fontFamily="@font/poppins_bold"
+               android:text="Deposit"
+               android:textSize="12sp"
+               android:textColor="@color/white"
+               />
+       </LinearLayout>
+
+
+       <LinearLayout
+           android:id="@+id/ll_updateProfile"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_gravity="center"
+           android:gravity="center|start"
+           android:weightSum="2"
+           android:padding="15dp"
+           android:layout_marginTop="30dp"
+           android:background="@drawable/edit_grey_background"
+           >
+           <ImageView
+               android:layout_width="25dp"
+               android:layout_height="25dp"
+               android:src="@drawable/announcement_icons"
+               android:layout_gravity="center_vertical"
+               android:layout_marginEnd="10dp"
+               app:tint="@color/app_color" />
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textSize="12sp"
+               android:layout_weight="2"
+               android:textColor="@color/white"
+               android:textAlignment="textStart"
+               android:fontFamily="@font/poppins"
+               android:text="Next Trade at 5pm"
+               />
+       </LinearLayout>
+
+       <ImageView
+           android:id="@+id/graph"
+           android:layout_width="match_parent"
+           android:layout_height="200dp"
+           android:layout_marginTop="20dp"
+           android:scaleType="fitXY"
+           android:src="@drawable/graph_image"
+           />
+
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:weightSum="2"
+           android:layout_marginTop="10dp"
+           >
+
+           <Button
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentBottom="true"
+               android:background="@drawable/stroke_button_background"
+               android:layout_marginBottom="30dp"
+               android:textAllCaps="false"
+               android:fontFamily="@font/poppins_bold"
+               android:text="High Trade"
+               android:layout_weight="1"
+               android:layout_margin="5dp"
+               android:textSize="12sp"
+               android:textColor="@color/white"
+               />
+
+           <Button
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentBottom="true"
+               android:background="@drawable/button_background"
+               android:layout_marginBottom="30dp"
+               android:textAllCaps="false"
+               android:layout_weight="1"
+               android:textSize="12sp"
+               android:fontFamily="@font/poppins_bold"
+               android:text="Auto Trade"
+               android:layout_margin="5dp"
+               android:textColor="@color/white"
+               />
+
+       </LinearLayout>
+
+
+       <include
+           android:id="@+id/include_menu"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           layout="@layout/home_menu_layout"
+           />
+
+
+   </LinearLayout>
+
+
+
+
+</ScrollView>

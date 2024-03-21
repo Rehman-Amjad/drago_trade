@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/second_color"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins"
+        android:textSize="12sp"
+        android:layout_marginTop="20dp"
+        android:text="Amount to deposit"
+        android:textColor="@color/app_color"
+        />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+        android:text="$0"
+        android:textColor="@color/white"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="10dp"
+        >
+
+
+        <Button
+            android:id="@+id/button_50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/simple_menu_border_background"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text="$50"
+            android:padding="10dp"
+            android:fontFamily="@font/poppins"
+            />
+
+        <Button
+            android:id="@+id/button_100"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/simple_menu_border_background"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text="$100"
+            android:padding="10dp"
+            android:fontFamily="@font/poppins"
+            />
+
+        <Button
+            android:id="@+id/button_150"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/simple_menu_border_background"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text="$150"
+            android:padding="10dp"
+            android:fontFamily="@font/poppins"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        >
+
+
+        <Button
+            android:id="@+id/button_200"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/simple_menu_border_background"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text="$200"
+            android:padding="10dp"
+            android:fontFamily="@font/poppins"
+            />
+
+        <Button
+            android:id="@+id/button_250"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/simple_menu_border_background"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text="$250"
+            android:padding="10dp"
+            android:fontFamily="@font/poppins"
+            />
+
+        <Button
+            android:id="@+id/button_300"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/simple_menu_border_background"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text="$300"
+            android:padding="10dp"
+            android:fontFamily="@font/poppins"
+            />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="20dp"
+    tools:context=".start.onboard.Onboard1Activity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/onboard1"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/text"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_above="@+id/next_button"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/start_exploring_the_world"
+        android:layout_marginBottom="20dp"
+        />
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_background"
+        android:layout_marginBottom="30dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/continues"
+        android:textColor="@color/white"
+        />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@color/second_color"
+    android:padding="50dp"
+    tools:context=".screens.deposit.DepositSlipActivity">
+
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_tick"
+        android:layout_gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:text="Sub Total"
+            />
+
+        <TextView
+            android:id="@+id/subTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textAlignment="textEnd"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:text="amount"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_below="@+id/dateTime"
+        android:layout_marginTop="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:text="Payment Gateway Fee"
+            />
+
+        <TextView
+            android:id="@+id/gateway_fee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textAlignment="textEnd"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:text="$0.00"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_below="@+id/dateTime"
+        android:layout_marginTop="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:text="Total"
+            />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textAlignment="textEnd"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:text="$1200"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="22sp"
+        android:layout_marginTop="30dp"
+        android:text="$0"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:text="You have successfully deposited funds in your wallet"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/thankYou_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/simple_stroke_button_background"
+        android:text="Say Thank You!"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins"
+        />
+
+</LinearLayout>

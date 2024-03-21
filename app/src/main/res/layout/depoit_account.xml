@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/second_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_grey_background"
+        android:padding="20dp"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_house"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="Deposit Address"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="Copy this Wallet Address to deposit to deposit your payment"
+            android:textColor="@color/white"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_copy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tv_copy"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_binanceAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/binance_deposit_address"
+                android:textColor="@color/app_color"
+                android:textSize="13sp" />
+            <ImageView
+                android:id="@+id/iv_copyclipboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                app:tint="@color/app_color"
+                android:src="@drawable/ic_copy"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_copypayid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/ll_copy"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_Bpayid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/binance_payId"
+                android:textColor="@color/app_color"
+                android:textSize="13sp" />
+            <ImageView
+                android:id="@+id/iv_copyPayidClipboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                app:tint="@color/app_color"
+                android:src="@drawable/ic_copy"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_copyORX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/ll_copypayeer"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_ORXAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/orx_deposit_address"
+                android:textColor="@color/app_color"
+                android:textSize="13sp" />
+            <ImageView
+                android:id="@+id/iv_copyORXclipboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_copy"
+                app:tint="@color/app_color" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

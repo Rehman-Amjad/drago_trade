@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/second_color"
+    android:padding="20dp"
+    tools:context=".screens.transfer.TransferActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Money"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"
+        android:text="Enter Amount"
+        android:textColor="@color/white"
+        />
+
+
+    <EditText
+        android:id="@+id/ed_amount"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_grey_background"
+        android:layout_marginTop="10dp"
+        android:hint="Enter Amount"
+        android:textSize="12sp"
+        android:fontFamily="@font/poppins"
+        android:drawablePadding="10dp"
+        android:singleLine="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:imeOptions="actionNext"
+        android:textColor="@color/white"
+        android:textColorHint="@color/light_grey"
+        android:paddingEnd="10dp"
+        android:paddingLeft="10dp"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="12sp"
+        android:layout_marginTop="30dp"
+        android:text="Receiver Email"
+        android:textColor="@color/white"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_grey_background"
+        android:layout_marginTop="5dp"
+        android:hint="info@gmail.com"
+        android:textSize="12sp"
+        android:fontFamily="@font/poppins"
+        android:drawablePadding="10dp"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:textColor="@color/white"
+        android:textColorHint="@color/light_grey"
+        android:paddingEnd="10dp"
+        android:paddingLeft="10dp"
+        />
+
+    <Button
+        android:id="@+id/continue_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_bold"
+        android:text="continue"
+        android:textColor="@color/white"
+        />
+
+
+</LinearLayout>

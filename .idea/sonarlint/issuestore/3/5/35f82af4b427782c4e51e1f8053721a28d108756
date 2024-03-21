@@ -1,0 +1,8 @@
+
+[kotlin:S6619c"7Remove this useless non-null check, it always succeeds.(Æ­çÿùÿÿÿÿ8šÖê±Ş1
+Vkotlin:S6619."7Remove this useless non-null check, it always succeeds.(”êª’8–©«ûå1
+9kotlin:S1128"Remove this unused import.(›»„Â8à£è±Ş1
+Bkotlin:S1874d"#Deprecated code should not be used.(î…8ã£è±Ş1
+Bkotlin:S1874f"#Deprecated code should not be used.(ÿìÓ‰8­Öê±Ş1
+Gkotlin:S1874"#Deprecated code should not be used.(·•¥¦ûÿÿÿÿ8­Öê±Ş1
+Bkotlin:S1874d"#Deprecated code should not be used.(î…8­Öê±Ş1

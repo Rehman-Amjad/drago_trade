@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/second_color"
+    tools:context=".profile.ContactActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        >
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="start"
+            android:src="@drawable/back_image"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/contact_image"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:text="Contact Us"
+            android:textColor="@color/app_color"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:text="Salakan menyelesaikan proses pembayaran"
+            android:textColor="@color/white"
+            />
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:padding="15dp"
+            android:background="@drawable/edit_grey_background"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Location"
+                android:textSize="12sp"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins"
+                android:drawablePadding="10dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="United Kingdom"
+                android:textSize="12sp"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:padding="15dp"
+            android:background="@drawable/edit_grey_background"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:background="@drawable/edit_grey_background"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Email"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:fontFamily="@font/poppins"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Info@dragotrade.com"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/light_grey"
+                android:layout_marginTop="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_grey_background"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Customer Support"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:fontFamily="@font/poppins"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Info@dragotrade.com"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/light_grey"
+                android:layout_marginTop="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_grey_background"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Call Us"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:fontFamily="@font/poppins"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+44 34 223223"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/light_grey"
+                android:layout_marginTop="10dp"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:padding="15dp"
+            android:background="@drawable/edit_grey_background"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Information"
+                android:textSize="12sp"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="1. Catat kode pembayaran di atas dan datang ke gerai Alfamart, Alfa Midi, Lawson atau DAN+DAN terdekat"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                android:drawablePadding="10dp"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            >
+
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_facebook"
+                android:layout_margin="10dp"
+                />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_linkedin"
+                android:layout_margin="10dp"
+                />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_instagram"
+                android:layout_margin="10dp"
+                />
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/open_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_marginTop="40dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Start Chat"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

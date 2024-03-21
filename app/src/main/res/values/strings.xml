@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Drago Trade</string>
+
+    <!--    // button text-->
+    <string name="next">Next</string>
+    <string name="continues">Continue</string>
+
+    <!--    // onboard text-->
+    <string name="start_exploring_the_world">Start Exploring the World</string>
+    <string name="todo">TODO</string>
+    <string name="back">back</string>
+    <string name="how_we_create_account">How we Create Account?</string>
+    <string name="onbaord4_content">Get 1 free month of online video course. Get unlimited access to thouands of inspining classes. Taught by industry leaders</string>
+
+    <!--    // Login text-->
+    <string name="log_in">Log in</string>
+    <string name="login_content">You can login with google if you signed up on this app with google</string>
+    <string name="login_with_google">Login With Google</string>
+    <string name="login">login</string>
+
+    <!--    // Signup text-->
+    <string name="hey">Hey 👋🏻</string>
+    <string name="sign_up_now">Sign Up Now</string>
+    <string name="signup_content">If you have an account / Login Here</string>
+    <string name="full_name">Enter Full Name</string>
+    <string name="email">Enter Email</string>
+    <string name="email_not_valid">Please enter valid email address</string>
+    <string name="enter_password">enter password</string>
+    <string name="password_length">password should be minimum of</string>
+    <string name="enter_confirm_password">enter confirm password</string>
+
+    <!--    // forgot reset text-->
+    <string name="fotgot_send_content">Please enter the email address associated with your account.</string>
+    <string name="reset_password">Add your new password to login your account.</string>
+    <string name="password_change_success">You have successfully changed your password</string>
+    <string name="support_content">Didn’t find the answer you were looking for? Contact our support center!</string>
+    <string name="faq_and_support">FAQ and Support</string>
+    <string name="faq_ans_1">To change your password, proceed to menu and select a profile. Then retype your current password and click confirm.</string>
+    <string name="faq_ques_1">How do I Change my password?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_verify_content">please check your inbox and click verification link to verify your account</string>
+    <string name="verification_sent">Email Verification send to email successfully\n</string>
+    <string name="verification_failed">Email verification send link failed. try again later</string>
+
+    // deposit
+    <string name="binance_deposit_address">TCJLD2BwBHESrqpimGRCrKVxABPac2kC6S\nBinance Trc20</string>
+    <string name="binance_payId">830158313\nBinance Pay Id</string>
+    <string name="binance_payeerId">P1044135780 \nPayeer</string>
+    <string name="orx_deposit_address">TAEYje75nnHvuJ4P78WNSYGzTQrKWk3se2\nOKX Trc20</string>
+
+
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_fragment"
+        android:title="Home"
+        android:contentDescription="Home"
+        android:icon="@drawable/ic_home"
+        />
+
+    <item
+        android:id="@+id/wallet_fragment"
+        android:title="Wallet"
+        android:contentDescription="Wallet"
+        android:icon="@drawable/ic_wallet"
+        />
+
+    <item
+        android:id="@+id/announcement_fragment"
+        android:title="Announcement"
+        android:contentDescription="Announcement"
+        android:icon="@drawable/ic_anouncement"
+        />
+
+    <item
+        android:id="@+id/profile_fragment"
+        android:title="Profile"
+        android:contentDescription="Profile"
+        android:icon="@drawable/ic_user"
+        />
+
+</menu>

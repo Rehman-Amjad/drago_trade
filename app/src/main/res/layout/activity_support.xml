@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/second_color"
+    tools:context=".profile.SupportActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        >
+        <ImageView
+            android:id="@+id/back_image"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="start"
+            android:src="@drawable/back_image"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:text="@string/faq_and_support"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/support_content"
+            android:textColor="@color/white"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:src="@drawable/back_image"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins"
+                android:textSize="12sp"
+                android:layout_marginLeft="10dp"
+                android:singleLine="true"
+                android:text="+44 258349684"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:background="@color/white"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            >
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:src="@drawable/back_image"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins"
+                android:textSize="12sp"
+                android:layout_marginLeft="10dp"
+                android:singleLine="true"
+                android:text="info@dragotrade.com"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:background="@color/white"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            >
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:src="@drawable/back_image"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins"
+                android:textSize="12sp"
+                android:layout_marginLeft="10dp"
+                android:singleLine="true"
+                android:text="Terms and Conditions"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:background="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/ques_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/edit_grey_background"
+            android:layout_marginTop="20dp"
+            android:text="@string/faq_ques_1"
+            android:textSize="12sp"
+            android:singleLine="true"
+            android:drawableEnd="@drawable/ic_back"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="20dp"
+            />
+
+        <TextView
+            android:id="@+id/ans_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/edit_grey_background"
+            android:layout_marginTop="10dp"
+            android:text="@string/faq_ans_1"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins"
+            android:drawablePadding="10dp"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:paddingStart="20dp"
+            />
+
+        <TextView
+            android:id="@+id/ques_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/edit_grey_background"
+            android:layout_marginTop="20dp"
+            android:text="@string/faq_ques_1"
+            android:textSize="12sp"
+            android:singleLine="true"
+            android:drawableEnd="@drawable/ic_back"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="20dp"
+            />
+
+        <TextView
+            android:id="@+id/ans_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/edit_grey_background"
+            android:layout_marginTop="10dp"
+            android:text="@string/faq_ans_1"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:paddingStart="20dp"
+            />
+
+        <TextView
+            android:id="@+id/ques_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/edit_grey_background"
+            android:layout_marginTop="20dp"
+            android:text="@string/faq_ques_1"
+            android:textSize="12sp"
+            android:singleLine="true"
+            android:drawableEnd="@drawable/ic_back"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:paddingStart="20dp"
+            />
+
+        <TextView
+            android:id="@+id/ans_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/edit_grey_background"
+            android:layout_marginTop="10dp"
+            android:text="@string/faq_ans_1"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:paddingStart="20dp"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,19 @@
+
+J
+java:S1066-"/Merge this if statement with the enclosing one.(ş¼ä™üÿÿÿÿ
+P
+java:S1118":Add a private constructor to hide the implicit public one.(ŒÚ²
+P	java:S125"<This block of commented-out lines of code should be removed.(¤¿è=
+H
+java:S1874+"3Remove this use of "NetworkInfo"; it is deprecated.(îÎÖ?
+Q
+java:S1874+"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(îÎÖ?
+K
+java:S1874-"0Remove this use of "getState"; it is deprecated.(ş¼ä™üÿÿÿÿ
+N
+java:S1874-"3Remove this use of "NetworkInfo"; it is deprecated.(ş¼ä™üÿÿÿÿ
+H
+java:S1874-"-Remove this use of "State"; it is deprecated.(ş¼ä™üÿÿÿÿ
+L
+java:S1874-"1Remove this use of "CONNECTED"; it is deprecated.(ş¼ä™üÿÿÿÿ
+X	java:S1254"<This block of commented-out lines of code should be removed.(İí•×8³å£×İ1

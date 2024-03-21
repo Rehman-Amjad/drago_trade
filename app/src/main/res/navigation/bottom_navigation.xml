@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.dragotrade.dragotrade.bottomFragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_walletFragment"
+            app:destination="@id/wallet_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wallet_fragment"
+        android:name="com.dragotrade.dragotrade.bottomFragment.WalletFragment"
+        android:label="Wallet"
+        tools:layout="@layout/fragment_wallet" >
+        <action
+            android:id="@+id/action_walletFragment_to_announcementFragment"
+            app:destination="@id/announcement_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/third_fragment"
+        android:name="com.dragotrade.dragotrade.bottomFragment.AnnouncementFragment"
+        android:label="Announcement"
+        tools:layout="@layout/fragment_announcement" >
+        <action
+            android:id="@+id/action_announcementFragment_to_profileFragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.dragotrade.dragotrade.bottomFragment.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

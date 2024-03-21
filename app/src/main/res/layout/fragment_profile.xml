@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/second_color"
+    tools:context=".bottomFragment.ProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_above="@+id/next_button"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Profile"
+            android:layout_marginBottom="20dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/edit_grey_background"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/profile_image"
+                android:layout_marginTop="20dp"
+                />
+
+
+            <TextView
+                android:id="@+id/fullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Name"
+                android:layout_marginBottom="20dp"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_above="@+id/next_button"
+            android:textColor="@color/white"
+            android:textAlignment="textStart"
+            android:padding="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Accounts"
+            />
+
+
+        <include
+            android:id="@+id/include_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/profile_account_layout"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textAlignment="textStart"
+            android:padding="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Trade"
+            />
+
+        <include
+            android:id="@+id/include_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/profile_option_layout"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

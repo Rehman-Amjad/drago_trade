@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/second_color"
+    android:scrollbars="none"
+    tools:context=".screens.withdraw.WithdrawActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <include
+            android:id="@+id/include_back"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            layout="@layout/back_layout"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#B1B4B1B1"
+            android:layout_marginTop="10dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            >
+
+            <TextView
+                android:id="@+id/history_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="History"
+                android:textColor="@color/app_color"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="Withdraw"
+                android:textColor="@color/app_color"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="Available Balance"
+                android:textColor="@color/white"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                >
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_star"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="10dp"
+                    android:text="$0 = 0.23"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_grey_background"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Withdraw AMOUNT"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="0"
+                    android:textColor="@color/app_color"
+                    />
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/include_deposit_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/deposit_input"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/withdraw_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Withdraw"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

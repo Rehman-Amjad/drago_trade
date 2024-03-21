@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "972581025050",
+    "project_id": "drago-trade-359db",
+    "storage_bucket": "drago-trade-359db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972581025050:android:fbe2f2eb0ac5ba357a68a3",
+        "android_client_info": {
+          "package_name": "com.dragotrade.dragotrade"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtVpls3yIII7nYXqwQY85KrjlP2NxIi48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

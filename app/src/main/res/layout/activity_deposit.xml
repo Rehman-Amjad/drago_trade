@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/second_color"
+   android:scrollbars="none"
+    tools:context=".screens.deposit.DepositActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <include
+            android:id="@+id/include_back"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            layout="@layout/back_layout"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#B1B4B1B1"
+            android:layout_marginTop="10dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            >
+
+            <include
+                android:id="@+id/include_deposit_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/depoit_account"
+                />
+
+            <include
+                android:id="@+id/include_deposit_price_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/deposit_price_button"
+                />
+
+            <include
+                android:id="@+id/include_deposit_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/deposit_input"
+                />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins"
+            android:textSize="12sp"
+            android:text="Add Custom Amount"
+            android:textColor="@color/app_color"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_image_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
+            android:visibility="invisible"
+            tools:text="@string/binance_deposit_address"
+            android:textColor="@color/white"
+            android:textSize="9sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/edit_grey_background"
+            >
+
+            <Button
+                android:id="@+id/upload_image_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:background="@drawable/simple_stroke_button_background"
+                android:text="upload image"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                />
+
+            <Button
+                android:id="@+id/deposit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:background="@drawable/simple_stroke_button_background"
+                android:text="Deposit"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

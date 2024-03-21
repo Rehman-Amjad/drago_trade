@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/second_color"
+    tools:context=".screens.transfer.TransferVerificationActivity">
+
+    <include
+        android:id="@+id/include_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/transfer_details_logo_layout"
+        />
+
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins"
+        android:textSize="26sp"
+        android:layout_marginTop="20dp"
+        android:text="42.00"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins"
+            android:textSize="12sp"
+            android:text="Full Name"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/fullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:fontFamily="@font/poppins"
+            android:textSize="12sp"
+            android:text="Full Name"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins"
+            android:textSize="12sp"
+            android:text="Email"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:fontFamily="@font/poppins"
+            android:textSize="12sp"
+            android:text="Full Name"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins"
+            android:textSize="12sp"
+            android:text="Fees &amp; Taxes"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:fontFamily="@font/poppins"
+            android:textSize="10sp"
+            android:text="free"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/app_color"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="14sp"
+            android:text="Total"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/total_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="14sp"
+            android:text="42.00"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/send_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Send Now"
+        android:layout_margin="20dp"
+        android:textColor="@color/white"
+        />
+
+</LinearLayout>

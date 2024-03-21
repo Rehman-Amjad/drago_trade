@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DragoTrade"
+        tools:targetApi="31">
+        <activity
+            android:name=".screens.wallet.WalletActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.chat.ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.transfer.TransferVerificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.transfer.TransferActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.withdraw.WithdrawSlipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.withdraw.WithdrawHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.withdraw.WithdrawActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.deposit.DepositSlipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.deposit.DepositHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.deposit.DepositActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.ContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".notification.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.SupportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".start.fotgot_verification.PasswordSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".start.fotgot_verification.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".start.fotgot_verification.EmailVerifySendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".start.fotgot_verification.EmailVerificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".start.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".start.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".start.onboard.Onboard4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".start.onboard.Onboard3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".start.onboard.Onboard2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".start.onboard.Onboard1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".start.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

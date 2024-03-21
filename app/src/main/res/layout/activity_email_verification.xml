@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/second_color"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context=".start.fotgot_verification.EmailVerificationActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/email_checker_image"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:layout_marginTop="50dp"
+        android:text="Verify your email"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/poppins"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:text="@string/email_verify_content"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/resend_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:fontFamily="@font/poppins"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:text="Resend Email"
+        android:textColor="@color/app_color"
+        />
+
+
+    <Button
+        android:id="@+id/open_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Open Inbox"
+        android:textColor="@color/white"
+        />
+
+
+</LinearLayout>
