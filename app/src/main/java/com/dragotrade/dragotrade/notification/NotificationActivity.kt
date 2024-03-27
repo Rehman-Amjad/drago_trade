@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dragotrade.dragotrade.R
 import com.dragotrade.dragotrade.adapter.NotificationAdapter
 import com.dragotrade.dragotrade.databinding.ActivityNotificationBinding
 import com.dragotrade.dragotrade.model.NotificationModel
@@ -59,7 +58,7 @@ class NotificationActivity : AppCompatActivity() {
         firestore.collection(Constants.COLLECTION_USER)
             .document(userUID)
             .collection("notification")
-//            .orderBy(Constants.KEY_TIMESTAMP,Query.Direction.ASCENDING)
+            .orderBy(Constants.KEY_TIMESTAMP, Query.Direction.ASCENDING)
             .addSnapshotListener(object : EventListener<QuerySnapshot> {
                 @SuppressLint("NotifyDataSetChanged")
                 override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?)
@@ -76,6 +75,7 @@ class NotificationActivity : AppCompatActivity() {
                             mDataList.add(snapShot.document.toObject(NotificationModel::class.java))
                         }
                     }
+                    binding.tvNotification.text = mDataList.size.toString()
 //                    if (mDataList.size <=0)
 //                    {
 //                        binding.llNoResult.visibility = View.VISIBLE

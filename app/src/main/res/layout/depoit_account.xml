@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/second_color">
+    android:background="@color/second_color"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,12 +41,14 @@
             android:text="Copy this Wallet Address to deposit to deposit your payment"
             android:textColor="@color/white"
             />
-
+    </LinearLayout>
         <LinearLayout
             android:id="@+id/ll_copy"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="@drawable/edit_grey_background"
+            android:padding="12dp"
             android:layout_below="@+id/tv_copy"
             android:orientation="horizontal">
             <androidx.appcompat.widget.AppCompatTextView
@@ -67,9 +70,11 @@
 
         <LinearLayout
             android:id="@+id/ll_copypayid"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="@drawable/edit_grey_background"
+            android:padding="12dp"
             android:layout_below="@+id/ll_copy"
             android:orientation="horizontal">
             <androidx.appcompat.widget.AppCompatTextView
@@ -91,9 +96,11 @@
 
         <LinearLayout
             android:id="@+id/ll_copyORX"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="@drawable/edit_grey_background"
+            android:padding="12dp"
             android:layout_below="@+id/ll_copypayeer"
             android:orientation="horizontal">
             <androidx.appcompat.widget.AppCompatTextView
@@ -113,6 +120,6 @@
                 app:tint="@color/app_color" />
         </LinearLayout>
 
-    </LinearLayout>
+
 
 </LinearLayout>

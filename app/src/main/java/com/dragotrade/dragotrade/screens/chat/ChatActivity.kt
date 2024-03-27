@@ -42,13 +42,17 @@ class ChatActivity : AppCompatActivity(),View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       binding = ActivityChatBinding.inflate(layoutInflater)
+        binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         firestore = FirebaseFirestore.getInstance()
         firebaseAuth = FirebaseAuth.getInstance()
         userUID = firebaseAuth.currentUser?.uid.toString()
         preferenceManager = PreferenceManager.getInstance(this)
+        binding.includeDetails.backImage.setOnClickListener {
+            onBackPressed()
+            finish()
+        }
 
         setListener()
         getChatList()

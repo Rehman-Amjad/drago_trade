@@ -3,15 +3,9 @@ package com.dragotrade.dragotrade
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import com.dragotrade.dragotrade.databinding.ActivityMainBinding
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.dragotrade.dragotrade.start.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -24,7 +18,17 @@ class MainActivity : AppCompatActivity(), LogoutListener {
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: ViewPagerAdapter
 
+    private var backPressTime: Long = 0
+    private val BACK_PRESS_DELAY = 2000
 
+    override fun onBackPressed() {
+        if (backPressTime + BACK_PRESS_DELAY > System.currentTimeMillis()) {
+            super.onBackPressed()
+        } else {
+            Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show()
+        }
+        backPressTime = System.currentTimeMillis()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)

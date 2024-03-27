@@ -21,6 +21,7 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 
 class AnnouncementFragment : Fragment() {
@@ -57,7 +58,7 @@ class AnnouncementFragment : Fragment() {
         adapter = activity?.let { AnnouncementAdapter(mDataList, it) }!!
         binding.recyclerView.adapter = adapter
         firestore.collection(Constants.COLLECTION_ANNOUNCEMENT)
-//            .orderBy(Constants.KEY_TIMESTAMP,Query.Direction.ASCENDING)
+//            .orderBy(Constants.KEY_TIMESTAMP, Query.Direction.ASCENDING)
             .addSnapshotListener(object : EventListener<QuerySnapshot> {
                 @SuppressLint("NotifyDataSetChanged")
                 override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?)

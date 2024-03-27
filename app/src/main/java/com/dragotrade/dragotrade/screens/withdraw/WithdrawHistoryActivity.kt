@@ -5,12 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dragotrade.dragotrade.R
-import com.dragotrade.dragotrade.adapter.DepositAdapter
 import com.dragotrade.dragotrade.adapter.WithdrawAdapter
-import com.dragotrade.dragotrade.databinding.ActivityDepositHistoryBinding
 import com.dragotrade.dragotrade.databinding.ActivityWithdrawHistoryBinding
-import com.dragotrade.dragotrade.model.DepositModel
 import com.dragotrade.dragotrade.model.WithdrawModel
 import com.dragotrade.dragotrade.utils.Constants
 import com.dragotrade.dragotrade.utils.PreferenceManager
@@ -19,6 +15,7 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 
 class WithdrawHistoryActivity : AppCompatActivity() {
@@ -60,7 +57,7 @@ class WithdrawHistoryActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
         firestore.collection(Constants.COLLECTION_WITHDRAW)
             .whereEqualTo(Constants.KEY_USERUID,userUID)
-//            .orderBy(Constants.KEY_TIMESTAMP,Query.Direction.ASCENDING)
+            .orderBy(Constants.KEY_TIMESTAMP, Query.Direction.DESCENDING)
             .addSnapshotListener(object : EventListener<QuerySnapshot> {
                 @SuppressLint("NotifyDataSetChanged")
                 override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?)

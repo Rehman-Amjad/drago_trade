@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/second_color"
+    android:orientation="vertical"
+    android:id="@+id/list_item">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins"
+                android:text="Drago Trade"
+                android:layout_marginLeft="10dp"
+                />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins"
+                android:text="5pm"
+                android:layout_marginLeft="10dp"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:background="@drawable/pending_background"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins"
+                android:text="Sent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins"
+            android:layout_weight="1"
+            android:text="$100"
+            />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#97B4B1B1"
+        android:layout_below="@+id/dateTime"
+        android:layout_marginTop="10dp"
+        />
+
+</LinearLayout>

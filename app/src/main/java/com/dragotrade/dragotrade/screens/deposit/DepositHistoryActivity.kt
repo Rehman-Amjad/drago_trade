@@ -15,6 +15,7 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 
 class DepositHistoryActivity : AppCompatActivity() {
@@ -54,7 +55,7 @@ class DepositHistoryActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
         firestore.collection(Constants.COLLECTION_DEPOSIT)
             .whereEqualTo(Constants.KEY_USERUID,userUID)
-//            .orderBy(Constants.KEY_TIMESTAMP,Query.Direction.ASCENDING)
+            .orderBy(Constants.KEY_TIMESTAMP, Query.Direction.DESCENDING)
             .addSnapshotListener(object : EventListener<QuerySnapshot> {
                 @SuppressLint("NotifyDataSetChanged")
                 override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?)

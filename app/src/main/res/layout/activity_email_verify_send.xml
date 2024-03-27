@@ -50,7 +50,7 @@
 
 
     <EditText
-        android:id="@+id/ed_fullName"
+        android:id="@+id/ed_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp"
@@ -69,14 +69,14 @@
         />
 
     <Button
-        android:id="@+id/open_button"
+        android:id="@+id/next_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_background"
         android:layout_marginTop="40dp"
         android:textAllCaps="false"
         android:fontFamily="@font/poppins_bold"
-        android:text="Send me email"
+        android:text="Next"
         android:textColor="@color/white"
         />
 

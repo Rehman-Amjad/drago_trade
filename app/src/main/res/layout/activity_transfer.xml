@@ -13,18 +13,50 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Money"
+        android:text="Transfer Money"
         android:textColor="@color/white"
         android:textStyle="bold"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_weight="0"
+            android:text="$"
+            />
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_weight="2"
+            android:text=" 0"
+            />
+
+
+    </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:fontFamily="@font/poppins"
         android:textSize="14sp"
-        android:layout_marginTop="20dp"
         android:text="Enter Amount"
         android:textColor="@color/white"
         />
@@ -34,22 +66,23 @@
         android:id="@+id/ed_amount"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/edit_grey_background"
-        android:layout_marginTop="10dp"
-        android:hint="Enter Amount"
-        android:textSize="12sp"
-        android:fontFamily="@font/poppins"
-        android:drawablePadding="10dp"
-        android:singleLine="true"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
+        android:background="@drawable/edit_grey_background"
+        android:drawableRight="@drawable/icn_dollar"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/light_gray"
+        android:fontFamily="@font/poppins"
+        android:hint="Enter Amount"
         android:imeOptions="actionNext"
+        android:paddingLeft="10dp"
+        android:paddingEnd="10dp"
+        android:singleLine="true"
         android:textColor="@color/white"
         android:textColorHint="@color/light_grey"
-        android:paddingEnd="10dp"
-        android:paddingLeft="10dp"
-        />
-
+        android:textSize="12sp"
+        android:inputType="number"/>
 
     <TextView
         android:layout_width="match_parent"

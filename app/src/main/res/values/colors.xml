@@ -8,4 +8,6 @@
     <color name="light_grey">#B4B1B1</color>
     <color name="badgeColor">#B4B1B1</color>
     <color name="light_gray">#D37F7F80</color>
+    <color name="red">#BA1A1A</color>
+    <color name="green">#10bf00</color>
 </resources>

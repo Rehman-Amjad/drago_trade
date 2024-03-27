@@ -31,7 +31,7 @@
         android:id="@+id/wallet_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        layout="@layout/wallet_menu"
+        layout="@layout/wallet_grid_menu"
         android:layout_marginTop="20dp"
         />
 

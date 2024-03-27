@@ -89,6 +89,24 @@
             android:textColor="@color/black"
             android:paddingLeft="10dp"
             />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/edit_background"
+            android:layout_marginTop="5dp"
+            android:hint="referral"
+            android:textSize="12sp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:fontFamily="@font/poppins"
+            android:drawablePadding="10dp"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"
+            />
+
 
         <TextView
             android:layout_width="match_parent"

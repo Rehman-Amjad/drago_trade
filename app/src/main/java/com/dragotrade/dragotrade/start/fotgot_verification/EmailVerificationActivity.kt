@@ -1,10 +1,9 @@
 package com.dragotrade.dragotrade.start.fotgot_verification
 
 import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.dragotrade.dragotrade.MainActivity
 import com.dragotrade.dragotrade.R
 import com.dragotrade.dragotrade.databinding.ActivityEmailVerificationBinding
@@ -45,10 +44,13 @@ class EmailVerificationActivity : AppCompatActivity() {
 
         binding.openButton.setOnClickListener {
             // Open email inbox
-            val intent = Intent(Intent.ACTION_VIEW)
-            val data = Uri.parse("mailto:")
-            intent.data = data
-            startActivity(intent)
+//            val intent = Intent(Intent.ACTION_VIEW)
+//            val data = Uri.parse("mailto:")
+//            intent.data = data
+//            startActivity(intent)
+            val intent = Intent(Intent.ACTION_MAIN)
+            intent.addCategory(Intent.CATEGORY_APP_EMAIL)
+            startActivity(Intent.createChooser(intent, "Email"))
         }
 
     }

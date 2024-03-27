@@ -63,6 +63,9 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation("com.google.firebase:firebase-storage:20.3.0")
 
+    //googleAuthantication
+    implementation("com.google.android.gms:play-services-auth:21.0.0")
+
     // bottom navigation bar
    // implementation("com.etebarian:meow-bottom-navigation-java:1.2.0")
 
@@ -79,4 +82,6 @@ dependencies {
     //circle image view
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
+    //lottie animation
+    implementation("com.airbnb.android:lottie:6.1.0")
 }

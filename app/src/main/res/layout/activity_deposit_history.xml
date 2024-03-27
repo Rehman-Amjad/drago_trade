@@ -61,7 +61,7 @@
             android:textAlignment="center"
             android:fontFamily="@font/poppins_bold"
             android:layout_weight="1"
-            android:text="amount"
+            android:text="Amount"
             />
 
 

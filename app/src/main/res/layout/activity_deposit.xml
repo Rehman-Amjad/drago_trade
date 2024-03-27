@@ -68,6 +68,15 @@
             android:text="Add Custom Amount"
             android:textColor="@color/app_color"
             />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins"
+            android:textSize="12sp"
+            android:text="The minimum amount that can be deposited is $25."
+            android:textColor="@color/app_color"
+            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_image_name"

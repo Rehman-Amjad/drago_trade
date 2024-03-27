@@ -7,12 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:972581025050:android:fbe2f2eb0ac5ba357a68a3",
+        "mobilesdk_app_id": "1:972581025050:android:9f998f11ab26bf047a68a3",
         "android_client_info": {
-          "package_name": "com.dragotrade.dragotrade"
+          "package_name": "com.drago.drago_admin"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "972581025050-rcotld5a311458pqmda7t2oe7sfipjh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCtVpls3yIII7nYXqwQY85KrjlP2NxIi48"
@@ -20,7 +25,86 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972581025050-rcotld5a311458pqmda7t2oe7sfipjh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972581025050:android:fbe2f2eb0ac5ba357a68a3",
+        "android_client_info": {
+          "package_name": "com.dragotrade.dragotrade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972581025050-en5pcbu9iamiidkgdecthqg36dao6lad.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dragotrade.dragotrade",
+            "certificate_hash": "65decd5262bf8fba796c9fcd3da8c8b27b7b238b"
+          }
+        },
+        {
+          "client_id": "972581025050-seldud7lh776ra3urcjmr1iu2g6u9kde.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dragotrade.dragotrade",
+            "certificate_hash": "cb482146cdb9728fec8e4865ebeebb6a12dc6834"
+          }
+        },
+        {
+          "client_id": "972581025050-rcotld5a311458pqmda7t2oe7sfipjh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtVpls3yIII7nYXqwQY85KrjlP2NxIi48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972581025050-rcotld5a311458pqmda7t2oe7sfipjh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972581025050:android:4007a6609c665ea07a68a3",
+        "android_client_info": {
+          "package_name": "dev.jahidhasanco.bmicalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972581025050-rcotld5a311458pqmda7t2oe7sfipjh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtVpls3yIII7nYXqwQY85KrjlP2NxIi48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972581025050-rcotld5a311458pqmda7t2oe7sfipjh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

@@ -5,7 +5,6 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.app.ProgressDialog
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
@@ -31,6 +30,7 @@ import com.dragotrade.dragotrade.databinding.ActivityDepositBinding
 import com.dragotrade.dragotrade.notification.CustomNotification
 import com.dragotrade.dragotrade.utils.Constants
 import com.dragotrade.dragotrade.utils.CurrentDateTime
+import com.dragotrade.dragotrade.utils.LoadingBar
 import com.dragotrade.dragotrade.utils.PreferenceManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -49,6 +49,7 @@ class DepositActivity : AppCompatActivity(), View.OnClickListener {
     private var currentDateTime  = CurrentDateTime(this)
 
     private val PERMISSION_REQUEST_CODE = 1001
+    private var loadingBar = LoadingBar(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -100,9 +101,9 @@ class DepositActivity : AppCompatActivity(), View.OnClickListener {
         binding.includeDepositAmount.ivCopyPayidClipboard.setOnClickListener(this)
 
         //button price
+        binding.includeDepositPriceButton.button25.setOnClickListener(this)
         binding.includeDepositPriceButton.button50.setOnClickListener(this)
         binding.includeDepositPriceButton.button100.setOnClickListener(this)
-        binding.includeDepositPriceButton.button150.setOnClickListener(this)
         binding.includeDepositPriceButton.button200.setOnClickListener(this)
         binding.includeDepositPriceButton.button250.setOnClickListener(this)
         binding.includeDepositPriceButton.button300.setOnClickListener(this)
@@ -117,15 +118,64 @@ class DepositActivity : AppCompatActivity(), View.OnClickListener {
             R.id.iv_copyPayidClipboard -> copyClipBoard(binding.includeDepositAmount.tvBpayid)
             R.id.iv_copyORXclipboard -> copyClipBoard(binding.includeDepositAmount.tvORXAddress)
             R.id.upload_image_button -> pickImageFromGallery()
-            R.id.button_50 -> binding.includeDepositPriceButton.amount.text = "50"
-            R.id.button_100 -> binding.includeDepositPriceButton.amount.text = "100"
-            R.id.button_150 -> binding.includeDepositPriceButton.amount.text = "150"
-            R.id.button_200 -> binding.includeDepositPriceButton.amount.text = "200"
-            R.id.button_250 -> binding.includeDepositPriceButton.amount.text = "250"
-            R.id.button_300 -> binding.includeDepositPriceButton.amount.text = "300"
-            R.id.deposit_button -> deposit()
+            R.id.button_25 -> {
+                binding.includeDepositPriceButton.amount.text = "25"
+                binding.includeDepositInput.edAmount.setText("25")
+            }R.id.button_50 -> {
+                binding.includeDepositPriceButton.amount.text = "50"
+                binding.includeDepositInput.edAmount.setText("50")
+            }R.id.button_100 -> {
+                binding.includeDepositPriceButton.amount.text = "100"
+                binding.includeDepositInput.edAmount.setText("100")
+            }R.id.button_200 -> {
+                binding.includeDepositPriceButton.amount.text = "200"
+                binding.includeDepositInput.edAmount.setText("200")
+            }R.id.button_250 -> {
+                binding.includeDepositPriceButton.amount.text = "250"
+                binding.includeDepositInput.edAmount.setText("250")
+            }R.id.button_300 -> {
+                binding.includeDepositPriceButton.amount.text = "300"
+                binding.includeDepositInput.edAmount.setText("300")
+            }
+            R.id.deposit_button -> {
+                loadingBar.ShowDialog("please wait...")
+                  if(isValid()){
+                      deposit()
+                  }
+            }
             else -> Toast.makeText(this, "Default", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun isValid(): Boolean {
+
+        val selectedMethod = binding.includeDepositInput.selectedWallet.selectedItem.toString()
+        val amount = binding.includeDepositInput.edAmount.text.toString().toDoubleOrNull()
+        val binanceID = binding.includeDepositInput.binanceID.text.toString()
+
+        if (amount == null || amount < 25) {
+            // Prompt user to enter a valid amount (minimum 25)
+            Toast.makeText(this, "Please enter an amount of at least 25", Toast.LENGTH_SHORT).show()
+            binding.includeDepositInput.edAmount.requestFocus()
+            loadingBar.HideDialog()
+            return false
+        }
+        if (selectedMethod == "Choose wallet") {
+            // Prompt user to choose a payment method
+            Toast.makeText(this, "Please choose a payment method", Toast.LENGTH_SHORT).show()
+            binding.includeDepositInput.selectedWallet.requestFocus()
+            loadingBar.HideDialog()
+            return false
+        }
+        if (binanceID.isBlank()) {
+            // Prompt user to enter a Binance ID
+            Toast.makeText(this, "Please enter your Binance/OKX ID", Toast.LENGTH_SHORT).show()
+            binding.includeDepositInput.binanceID.requestFocus()
+            loadingBar.HideDialog()
+            return false
+        }
+
+        return true
     }
 
     private fun amountChange() {
@@ -157,14 +207,20 @@ class DepositActivity : AppCompatActivity(), View.OnClickListener {
 
                 when (selectedMethod) {
                     "Choose Withdraw Method" -> {
+                        binding.includeDepositInput.binanceID.hint = "Invalid Method"
+                        binding.includeDepositInput.binanceTitle.text = "Binance ID"
                         binding.depositButton.isEnabled = false
                         Toast.makeText(this@DepositActivity,"Please select withdraw method",Toast.LENGTH_SHORT).show()
                     }
                     "Binance" -> {
+                        binding.includeDepositInput.binanceID.hint = "Enter Binance ID"
+                        binding.includeDepositInput.binanceTitle.text = "Binance ID"
                         depositMethod = "Binance ID"
                         binding.depositButton.isEnabled = true
                         // binding.myCashTv.visibility = View.VISIBLE
                     } "OKX" -> {
+                    binding.includeDepositInput.binanceID.hint = "Enter OKX ID"
+                    binding.includeDepositInput.binanceTitle.text = "OKX ID"
                     depositMethod = "OKX"
                     binding.depositButton.isEnabled = true
                     //  binding.myCashTv.visibility = View.VISIBLE
@@ -225,15 +281,10 @@ class DepositActivity : AppCompatActivity(), View.OnClickListener {
             // Handle the case where no image is selected
             showMessage("No image selected")
         }else{
-            val progressDialog = ProgressDialog(this)
-            progressDialog.setTitle("Uploading...")
-            progressDialog.setMessage("Uploading your image..")
-            progressDialog.show()
-
             val ref : StorageReference = FirebaseStorage.getInstance().reference
                 .child(UUID.randomUUID().toString())
             ref.putFile(selectedImage).addOnSuccessListener { taskSnapshot ->
-                progressDialog.dismiss()
+                loadingBar.HideDialog()
                 taskSnapshot.storage.downloadUrl.addOnSuccessListener {
                     val url = it.toString()
                     updateImageToDatabase(url)
@@ -241,7 +292,7 @@ class DepositActivity : AppCompatActivity(), View.OnClickListener {
 
 
             }.addOnFailureListener{
-                progressDialog.dismiss()
+                loadingBar.HideDialog()
                 Toast.makeText(this, "Fail to Upload Image..", Toast.LENGTH_SHORT)
                     .show()
             }
@@ -250,6 +301,7 @@ class DepositActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun updateImageToDatabase(url: String) {
 
+        loadingBar.ShowDialog("Submitting Deposit Request")
         val email = preferenceManager.getString(Constants.KEY_EMAIL)
         val id = firestore.collection(Constants.COLLECTION_DEPOSIT).document().id
         val map = hashMapOf<String,Any>(
@@ -270,6 +322,7 @@ class DepositActivity : AppCompatActivity(), View.OnClickListener {
         firestore.collection(Constants.COLLECTION_DEPOSIT).document(id)
             .set(map).addOnCompleteListener{
                 if (it.isSuccessful){
+                    loadingBar.HideDialog()
                     binding.tvImageName.visibility = View.INVISIBLE
                     binding.includeDepositInput.binanceID.setText("")
                     showMessage("deposit request submitted")
@@ -280,9 +333,11 @@ class DepositActivity : AppCompatActivity(), View.OnClickListener {
                     val intent = Intent(this, DepositSlipActivity::class.java)
                     intent.putExtra(Constants.KEY_AMOUNT,binding.includeDepositPriceButton.amount.text.toString())
                     startActivity(intent)
+                    finish()
 
                 }
             }.addOnFailureListener{
+                loadingBar.HideDialog()
                 Toast.makeText(this, "something went wrong!!", Toast.LENGTH_SHORT)
                     .show()
             }

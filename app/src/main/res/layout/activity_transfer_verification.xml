@@ -16,19 +16,36 @@
         layout="@layout/transfer_details_logo_layout"
         />
 
-
-    <TextView
-        android:id="@+id/amount"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:fontFamily="@font/poppins"
-        android:textSize="26sp"
-        android:layout_marginTop="20dp"
-        android:text="42.00"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        />
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins"
+            android:textSize="26sp"
+            android:layout_marginTop="20dp"
+            android:text="$"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            /><TextView
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins"
+            android:textSize="26sp"
+            android:layout_marginTop="20dp"
+            android:text=" 42.00"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+
 
     <View
         android:layout_width="match_parent"
@@ -58,7 +75,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textColor="@color/white"
-            />
+            android:layout_marginStart="10dp"/>
 
         <TextView
             android:id="@+id/fullName"
@@ -71,7 +88,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textColor="@color/white"
-            />
+            android:layout_marginEnd="10dp"/>
 
 
     </LinearLayout>
@@ -103,7 +120,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textColor="@color/white"
-            />
+            android:layout_marginStart="10dp"/>
 
         <TextView
             android:id="@+id/email"
@@ -116,7 +133,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textColor="@color/white"
-            />
+            android:layout_marginEnd="10dp"/>
 
 
     </LinearLayout>
@@ -147,7 +164,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textColor="@color/white"
-            />
+            android:layout_marginStart="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -159,50 +176,56 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textColor="@color/app_color"
-            />
+            android:layout_marginEnd="10dp"/>
 
 
     </LinearLayout>
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:padding="12sp"
-        android:layout_gravity="center"
-        android:gravity="center"
         android:layout_marginTop="30dp"
-        android:weightSum="2"
         >
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="textStart"
             android:fontFamily="@font/poppins_bold"
             android:textSize="14sp"
             android:text="Total"
             android:textStyle="bold"
-            android:layout_weight="1"
             android:textColor="@color/white"
-            />
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="14sp"
+            android:text="$"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_toStartOf="@+id/total_amount"/>
 
         <TextView
             android:id="@+id/total_amount"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="textEnd"
             android:fontFamily="@font/poppins_bold"
             android:textSize="14sp"
-            android:text="42.00"
+            android:text=" 42.00"
             android:textStyle="bold"
-            android:layout_weight="1"
             android:textColor="@color/white"
-            />
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"/>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
     <Button

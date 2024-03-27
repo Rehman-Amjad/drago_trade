@@ -12,6 +12,7 @@ import com.dragotrade.dragotrade.R
 import com.dragotrade.dragotrade.databinding.ActivityTransferBinding
 import com.dragotrade.dragotrade.utils.Constants
 import com.dragotrade.dragotrade.utils.LoadingBar
+import com.dragotrade.dragotrade.utils.PreferenceManager
 import com.dragotrade.dragotrade.utils.Validation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentChange
@@ -23,7 +24,9 @@ import com.google.firebase.firestore.QuerySnapshot
 class TransferActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityTransferBinding
-    private lateinit var firestore : FirebaseFirestore
+    private lateinit var preferenceManager: PreferenceManager
+    private lateinit var userUID : String
+    private lateinit var firestore: FirebaseFirestore
     private lateinit var firebaseAuth: FirebaseAuth
     private var loadingBar = LoadingBar(this)
 
@@ -34,14 +37,39 @@ class TransferActivity : AppCompatActivity(), View.OnClickListener {
 
         firestore = FirebaseFirestore.getInstance()
         firebaseAuth = FirebaseAuth.getInstance()
+        preferenceManager = PreferenceManager.getInstance(this)
 
 
         setListener()
+        findBalance()
 
 
 
     }
+    private fun findBalance() {
+        userUID = preferenceManager.getString(Constants.KEY_USERUID)
 
+        firestore.collection(Constants.COLLECTION_WALLET).document(userUID)
+            .get()
+            .addOnSuccessListener { documentSnapshot ->
+                if (documentSnapshot.exists()) {
+                    // Document exists, retrieve data
+                    val walletData = documentSnapshot.data
+                    val balance = walletData?.get(Constants.KEY_BALANCE).toString()
+
+                    binding.tvBalance.text = balance
+
+                } else {
+                    // Document doesn't exist
+                    Log.d("SignupActivity", "Wallet document does not exist for user: $userUID")
+                }
+            }
+            .addOnFailureListener { e ->
+                // Handle failure
+                Log.e("SignupActivity", "Error retrieving wallet data: $e")
+            }
+
+    }
     private fun setListener() {
         binding.continueButton.setOnClickListener(this)
 
@@ -49,20 +77,32 @@ class TransferActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.continue_button ->validates()
+            R.id.continue_button ->{
+                if(isValid()){
+                    validates()
+                }
+            }
         }
+    }
+
+    private fun isValid(): Boolean {
+        return true
     }
 
     private fun validates() {
         binding.apply {
-            if (email.text.isNullOrEmpty()){
+            val senderEmail = preferenceManager.getString(Constants.KEY_EMAIL)
+
+            if (email.text.isNullOrEmpty()) {
                 showMessage(getString(R.string.email))
-            }else if (!Validation.isEmailValid(email.text.toString())) {
+            } else if (!Validation.isEmailValid(email.text.toString())) {
                 showMessage(getString(R.string.email_not_valid))
-            }else if (edAmount.text.isNullOrEmpty()) {
-                showMessage("enter amount")
-            } else{
-               loadingBar.ShowDialog("please wait")
+            } else if (email.text.toString() == senderEmail) {
+                showMessage("Sender's email and receiver's email cannot be the same.")
+            } else if (edAmount.text.isNullOrEmpty()) {
+                showMessage("Enter amount")
+            } else {
+                loadingBar.ShowDialog("Please wait")
                 fetchData()
             }
         }

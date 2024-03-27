@@ -17,16 +17,40 @@
         android:textSize="12sp"
         />
 
+
     <TextView
+        android:id="@+id/tv_dollar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0.0 USDT"
+        android:text="S "
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/head_text"
         />
+    <TextView
+        android:id="@+id/tv_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0 "
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/head_text"
+        android:layout_toEndOf="@+id/tv_dollar"/>
+    <TextView
+        android:id="@+id/tv_USDT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" USDT"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/head_text"
+        android:layout_toEndOf="@+id/tv_balance"/>
 
 
     <ImageView

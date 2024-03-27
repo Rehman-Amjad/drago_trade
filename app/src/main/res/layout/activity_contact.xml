@@ -290,7 +290,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/open_button"
+            android:id="@+id/chat_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"

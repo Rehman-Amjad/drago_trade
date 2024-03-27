@@ -31,6 +31,8 @@
         android:inputType="number"
         android:fontFamily="@font/poppins"
         android:drawablePadding="10dp"
+        android:drawableEnd="@drawable/icn_dollar2"
+        android:drawableTint="@color/light_gray"
         android:singleLine="true"
         android:imeOptions="actionNext"
         android:textColor="@color/white"
@@ -71,6 +73,7 @@
             android:textSize="11dp"
             android:spinnerMode="dropdown"
             tools:ignore="RtlSymmetry" />
+
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -82,6 +85,7 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/binanceTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"

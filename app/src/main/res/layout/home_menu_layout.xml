@@ -36,7 +36,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textColor="@color/white"
                 android:textAlignment="textStart"
                 android:fontFamily="@font/poppins"
@@ -68,7 +68,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textColor="@color/white"
                 android:textAlignment="textStart"
                 android:fontFamily="@font/poppins"
@@ -100,7 +100,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textColor="@color/white"
                 android:textAlignment="textStart"
                 android:fontFamily="@font/poppins"
@@ -132,7 +132,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textColor="@color/white"
                 android:textAlignment="textStart"
                 android:fontFamily="@font/poppins"
@@ -151,6 +151,7 @@
         android:weightSum="4"
         >
         <LinearLayout
+            android:id="@+id/ll_auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -171,7 +172,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textColor="@color/white"
                 android:textAlignment="textStart"
                 android:fontFamily="@font/poppins"
@@ -182,6 +183,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_high"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -202,7 +204,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textColor="@color/white"
                 android:textAlignment="textStart"
                 android:fontFamily="@font/poppins"
@@ -234,7 +236,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textColor="@color/white"
                 android:textAlignment="textStart"
                 android:fontFamily="@font/poppins"
@@ -245,6 +247,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -265,7 +268,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textColor="@color/white"
                 android:textAlignment="textStart"
                 android:fontFamily="@font/poppins"
