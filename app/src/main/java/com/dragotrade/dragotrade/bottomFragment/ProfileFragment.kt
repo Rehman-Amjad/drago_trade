@@ -69,6 +69,7 @@ class ProfileFragment : Fragment(),View.OnClickListener {
         binding.includeAccount.llUpdateProfile.setOnClickListener(this)
         binding.includeAccount.usernameCopy.setOnClickListener(this)
         binding.includeAccount.linkCopy.setOnClickListener(this)
+        binding.includeAccount.shareImage.setOnClickListener(this)
 
         binding.includeOption.llFaq.setOnClickListener(this)
         binding.includeOption.llLiveSupport.setOnClickListener(this)
@@ -83,6 +84,7 @@ class ProfileFragment : Fragment(),View.OnClickListener {
            R.id.ll_updateProfile -> moveScreen()
            R.id.username_copy-> copyClipBoard(preferenceManager.getString(Constants.KEY_USERNAME))
            R.id.link_copy->  generateRefLink()
+           R.id.share_image->  generateRefLink()
            R.id.ll_logout -> logout()
            R.id.ll_faq -> startActivity(Intent(requireContext(),SupportActivity::class.java))
            R.id.ll_contact -> startActivity(Intent(requireContext(),ContactActivity::class.java))
@@ -130,6 +132,7 @@ class ProfileFragment : Fragment(),View.OnClickListener {
                         val flowchartLink: Uri? = task.result?.previewLink
                         Log.d("DynamicLink", "onCreate: $shortLink\n$flowchartLink")
                         copyClipBoard(shortLink.toString())
+                        shareData(shortLink.toString())
                     } else {
                         // Error
                         // ...
@@ -137,6 +140,14 @@ class ProfileFragment : Fragment(),View.OnClickListener {
                 }
         }
 
+    }
+
+    private fun shareData(referralUrl: String) {
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.type = "text/plain"
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Drago App Referral Link")
+        shareIntent.putExtra(Intent.EXTRA_TEXT, referralUrl)
+        startActivity(Intent.createChooser(shareIntent, "Share via"))
     }
 
 }
