@@ -51,6 +51,7 @@ class ChatActivity : AppCompatActivity(),View.OnClickListener {
     var bitmap: Bitmap? = null
     var imageUrl= ""
     var isPickImage = false
+    var layoutManager: LinearLayoutManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,7 +81,12 @@ class ChatActivity : AppCompatActivity(),View.OnClickListener {
     }
 
     private fun getChatList() {
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+//        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+
+
+        layoutManager = LinearLayoutManager(this)
+        layoutManager!!.setStackFromEnd(true)
+        binding.recyclerView.setLayoutManager(layoutManager)
         binding.recyclerView.setHasFixedSize(true)
 
         mDataList = arrayListOf<ChatModel>()
@@ -159,7 +165,6 @@ class ChatActivity : AppCompatActivity(),View.OnClickListener {
             } else{
                 binding.progressBar.visibility = View.VISIBLE
                 binding.btnSend.visibility = View.GONE
-               // loadingBar.ShowDialog("please wait")
                 if (uri != null && isPickImage) {
                     saveImageToFirebaseStorage(binding.edMessage.text.toString())
                 } else {
@@ -186,15 +191,15 @@ class ChatActivity : AppCompatActivity(),View.OnClickListener {
             }
     }
 
-    private fun saveMessageData(message: String,imageUrl : String){
-        val timeStamp = currentDateTime.getTimeMiles().toString();
+    private fun saveMessageData(message: String,imageLink : String){
+        val timeStamp = currentDateTime.getTimeMiles().toString()
         val map = hashMapOf(
             Constants.KEY_TIMESTAMP to timeStamp,
             Constants.KEY_DATE to currentDateTime.getCurrentDate().toString(),
             Constants.KEY_TIME to currentDateTime.getTimeWithAmPm().toString(),
             Constants.KEY_NOTIFICATION_MESSAGE to message,
             "type" to "user",
-            "imageUrl" to imageUrl,
+            "imageUrl" to imageLink,
         )
         firestore.collection(Constants.COLLECTION_CHATS)
             .document(userUID)
@@ -202,10 +207,13 @@ class ChatActivity : AppCompatActivity(),View.OnClickListener {
             .document(timeStamp)
             .set(map).addOnCompleteListener{ task->
                 if (task.isSuccessful){
+                    isPickImage = false
+                    imageUrl = ""
                     binding.edMessage.setText("")
                 }
             }.addOnCompleteListener {
                 if (it.isSuccessful){
+                    isPickImage = false
                     binding.btnSend.setVisibility(View.VISIBLE)
                     binding.image.setVisibility(View.GONE)
                     binding.progressBar.visibility = View.GONE
