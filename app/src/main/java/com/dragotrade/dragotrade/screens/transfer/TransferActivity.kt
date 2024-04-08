@@ -55,9 +55,9 @@ class TransferActivity : AppCompatActivity(), View.OnClickListener {
                 if (documentSnapshot.exists()) {
                     // Document exists, retrieve data
                     val walletData = documentSnapshot.data
-                    val balance = walletData?.get(Constants.KEY_BALANCE).toString()
+                    val balance = walletData?.get(Constants.KEY_BALANCE)?.toString()?.toDoubleOrNull()
 
-                    binding.tvBalance.text = balance
+                    binding.tvBalance.text = String.format("%.2f", balance)
 
                 } else {
                     // Document doesn't exist

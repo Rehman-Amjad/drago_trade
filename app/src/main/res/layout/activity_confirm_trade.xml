@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/second_color"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context=".screens.trade.highTrade.ConfirmTradeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/back_layout"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            layout="@layout/back_layout"
+            />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="10dp"
+            android:text="You are ..."
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="10dp"
+                android:text="Total Balance (USD)"
+                />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_weight="0"
+                android:text="$"
+                />
+            <TextView
+                android:id="@+id/tv_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_weight="2"
+                android:text=" 0"
+                />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_medium"
+                android:text="History"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="Bet Time"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/edit_grey_background"
+            android:layout_marginTop="5dp"
+            android:hint="time"
+            android:textSize="12sp"
+            android:inputType="number"
+            android:fontFamily="@font/poppins"
+            android:drawablePadding="10dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:textColor="@color/white"
+            android:textColorHint="@color/light_grey"
+            android:paddingEnd="10dp"
+            android:paddingLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="Amount"
+            android:textColor="@color/white"
+            />
+
+        <EditText
+            android:id="@+id/ed_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/edit_grey_background"
+            android:layout_marginTop="5dp"
+            android:hint="Enter Amount"
+            android:textSize="12sp"
+            android:inputType="number"
+            android:fontFamily="@font/poppins"
+            android:drawablePadding="10dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:textColor="@color/white"
+            android:textColorHint="@color/light_grey"
+            android:paddingEnd="10dp"
+            android:paddingLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:text="My Earning"
+            android:textColor="@color/white"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/round_grey_background">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="5dp"
+                    android:text="Status"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_Status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="5dp"
+                    android:textAlignment="textEnd"
+                    android:textSize="16sp"
+                    android:text=""
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@color/second_color"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Amount"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAlignment="textEnd"
+                    android:textSize="16sp"
+                    android:text=""
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@color/second_color"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:layout_weight="1"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAlignment="textStart"
+                    android:textSize="16sp"
+                    android:text="Brand Name"
+                    android:textColor="@color/white"
+                    />
+                <TextView
+                    android:id="@+id/tv_brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAlignment="textEnd"
+                    android:textSize="16sp"
+                    android:text=""
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@color/second_color"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:layout_weight="1"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAlignment="textStart"
+                    android:textSize="16sp"
+                    android:text="Loss 15%"
+                    android:textColor="@color/red"
+                    />
+                <TextView
+                    android:id="@+id/tv_percentage_loss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAlignment="textEnd"
+                    android:textSize="16sp"
+                    android:text=""
+                    android:textColor="@color/red"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@color/second_color"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:layout_weight="1"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="20dp"
+                    android:textAlignment="textStart"
+                    android:textSize="16sp"
+                    android:text="Profit 10%"
+                    android:textColor="@color/green"
+                    />
+                <TextView
+                    android:id="@+id/tv_percentage_profit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="20dp"
+                    android:textAlignment="textEnd"
+                    android:textSize="16sp"
+                    android:text=""
+                    android:textColor="@color/green"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_marginTop="30dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Confirm"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

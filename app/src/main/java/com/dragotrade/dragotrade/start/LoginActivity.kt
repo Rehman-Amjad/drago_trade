@@ -30,6 +30,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.messaging.FirebaseMessaging
+import kotlin.random.Random
 
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
@@ -77,6 +78,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setListener() {
         showPassword(binding.edPassword)
+        binding.tvUsername.text = "Referral ID: " + generateRandomReferralCode()
         binding.signupText.setOnClickListener(this)
         binding.loginButton.setOnClickListener(this)
         binding.forgotText.setOnClickListener(this)
@@ -121,6 +123,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 if (task.isSuccessful) {
 
                     userUID = firebaseAuth.currentUser?.uid.toString()
+
                     updateUI(userUID)
 //                    Toast.makeText(this@LoginActivity, userUID, Toast.LENGTH_SHORT).show()
 
@@ -141,9 +144,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 val snapshot = task.result
                 if (snapshot != null && snapshot.exists()) {
                     loadingBar.HideDialog()
-//                    savePrefDataGoogle(userUID)
-//                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-//                    finish()
+                    savePrefDataGoogle(userUID)
                     Toast.makeText(
                         baseContext,
                         "Account already exists.",
@@ -188,7 +189,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
-    private fun saveData(userUID: String, result: String, referralCode: String) {
+    private fun saveData(userUID: String, result: String, userName: String) {
         loadingBar.ShowDialog("Please Wait...")
         val currentTimestamp = System.currentTimeMillis()
 
@@ -199,8 +200,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             Constants.KEY_FULLNAME to (acct?.displayName ?: ""),
             Constants.KEY_EMAIL to (acct?.email ?: ""),
             Constants.KEY_USERUID to userUID,
-            Constants.KEY_USERNAME to (acct?.displayName ?: ""),
-            Constants.KEY_REFERRAL_CODE to referralCode,
+            Constants.KEY_USERNAME to userName,
+            Constants.KEY_REFERRAL_CODE to "",
             Constants.KEY_TOKEN to result,
             Constants.KEY_DATE to currentDateTime.getCurrentDate().toString(),
             Constants.KEY_TIME to currentDateTime.getTimeWithAmPm().toString(),
@@ -260,7 +261,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 showMessage(getString(R.string.enter_password))
             } else{
                 loadingBar.ShowDialog("please wait")
-                login(edEmail.text.toString(),edPassword.text.toString())
+                login(edEmail.text.toString(),
+                    edPassword.text.toString())
             }
         }
     }
@@ -365,6 +367,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     preferenceManager.putString(Constants.KEY_PROFILE_PIC, snapshot.getString(Constants.KEY_PROFILE_PIC).toString())
                     preferenceManager.putString(Constants.KEY_PHONE_NUMBER, snapshot.getString(Constants.KEY_PHONE_NUMBER).toString())
 
+                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                    finish()
+
                 } else {
                     // Handle the case where user data doesn't exist
                     loadingBar.HideDialog()
@@ -429,5 +434,15 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
     private fun showMessage(message: String) {
         Toast.makeText(this@LoginActivity, message, Toast.LENGTH_SHORT).show()
+    }
+    private fun generateRandomReferralCode(): String {
+        val characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+        val random = Random
+
+        // Generate a random 6-character string
+
+        return (1..6)
+            .map { characters[random.nextInt(0, characters.length)] }
+            .joinToString("")
     }
 }

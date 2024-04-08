@@ -118,10 +118,12 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
     private fun firebaseAuthWithGoogle(idToken: String?) {
+        loadingBar.ShowDialog("Please Wait...")
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         firebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    loadingBar.ShowDialog("Please Wait...")
                     updateUI()
                 } else {
                     // If sign in fails, display a message to the user.
@@ -143,9 +145,7 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
                     if (snapshot != null && snapshot.exists()) {
                         // User exists, proceed to MainActivity
                         loadingBar.HideDialog()
-//                        savePrefDataGoogle(user)
-//                        startActivity(Intent(this@SignupActivity, MainActivity::class.java))
-//                        finish()
+                        savePrefDataGoogle(user)
                         Toast.makeText(this,"Account Already exist.", Toast.LENGTH_SHORT).show()
                     } else {
                         VerificationAndDataSave(currentUser)
@@ -180,7 +180,7 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun saveData(userUID: String, result: String, referralCode: String) {
+    private fun saveData(userUID: String, result: String, userName: String) {
         loadingBar.ShowDialog("Please Wait...")
         val currentTimestamp = System.currentTimeMillis()
 
@@ -191,8 +191,8 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
             Constants.KEY_FULLNAME to (acct?.displayName ?: ""),
             Constants.KEY_EMAIL to (acct?.email ?: ""),
             Constants.KEY_USERUID to userUID,
-            Constants.KEY_USERNAME to (acct?.displayName ?: ""),
-            Constants.KEY_REFERRAL_CODE to referralCode,
+            Constants.KEY_USERNAME to userName,
+            Constants.KEY_REFERRAL_CODE to "",
             Constants.KEY_TOKEN to result,
             Constants.KEY_DATE to currentDateTime.getCurrentDate().toString(),
             Constants.KEY_TIME to currentDateTime.getTimeWithAmPm().toString(),
@@ -209,6 +209,11 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
                 if (task.isSuccessful) {
                     loadingBar.HideDialog()
                     addWalletGoogle()
+
+                    customNotification.ShowNotification(R.drawable.logo,"your account has been created successfully")
+                    customNotification.saveNotification(userUID,"Account Creation","Thanks for creating account")
+
+                    loadingBar.HideDialog()
                 }
             }
             .addOnFailureListener { e ->
@@ -242,6 +247,9 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
                     preferenceManager.putString(Constants.KEY_PASSWORD, snapshot.getString(Constants.KEY_PASSWORD).toString())
                     preferenceManager.putString(Constants.KEY_PROFILE_PIC, snapshot.getString(Constants.KEY_PROFILE_PIC).toString())
                     preferenceManager.putString(Constants.KEY_PHONE_NUMBER, snapshot.getString(Constants.KEY_PHONE_NUMBER).toString())
+
+                    startActivity(Intent(this@SignupActivity, MainActivity::class.java))
+                    finish()
 
                 } else {
                     // Handle the case where user data doesn't exist

@@ -213,13 +213,13 @@ class DepositActivity : AppCompatActivity(), View.OnClickListener {
                         Toast.makeText(this@DepositActivity,"Please select withdraw method",Toast.LENGTH_SHORT).show()
                     }
                     "Binance" -> {
-                        binding.includeDepositInput.binanceID.hint = "Enter Binance ID"
+//                        binding.includeDepositInput.binanceID.hint = "Enter Binance ID"
                         binding.includeDepositInput.binanceTitle.text = "Binance ID"
                         depositMethod = "Binance ID"
                         binding.depositButton.isEnabled = true
                         // binding.myCashTv.visibility = View.VISIBLE
                     } "OKX" -> {
-                    binding.includeDepositInput.binanceID.hint = "Enter OKX ID"
+//                    binding.includeDepositInput.binanceID.hint = "Enter OKX ID"
                     binding.includeDepositInput.binanceTitle.text = "OKX ID"
                     depositMethod = "OKX"
                     binding.depositButton.isEnabled = true

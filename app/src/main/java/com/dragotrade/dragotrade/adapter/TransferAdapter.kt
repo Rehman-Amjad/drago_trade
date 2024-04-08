@@ -23,15 +23,6 @@ class TransferAdapter(private val mDataList: ArrayList<TransferModel>, val conte
     override fun onBindViewHolder(holder: TransferAdapter.ViewHolder, position: Int) {
         val transfer = mDataList[position]
 
-//        holder.date.text = transfer.date
-//        holder.time.text = transfer.time
-//        holder.amount.text = "$" + transfer.amount
-//
-////        // Check if the user's userUID is equal to the receiverID
-////        val isUserReceiver = transfer.receiverID == yourUserUID
-////
-////        // Set the status text based on whether the user is the sender or receiver
-////        holder.status.text = if (isUserReceiver) "Received" else "Sent"
 
         holder.date.text = transfer.date
         holder.time.text = transfer.time

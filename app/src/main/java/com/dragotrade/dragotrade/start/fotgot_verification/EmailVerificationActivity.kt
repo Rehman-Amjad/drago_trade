@@ -18,6 +18,7 @@ class EmailVerificationActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+
         user = auth.currentUser!!
         if (user.isEmailVerified){
             startActivity(Intent(this,MainActivity::class.java))

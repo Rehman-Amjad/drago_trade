@@ -37,6 +37,7 @@ class TransferHistoryActivity : AppCompatActivity() {
 
         binding.backLayout.backImage.setOnClickListener{
             onBackPressedDispatcher.onBackPressed()
+            finish()
         }
         binding.backLayout.backText.text = "Transfer History"
 
@@ -56,11 +57,15 @@ class TransferHistoryActivity : AppCompatActivity() {
         val receiverQuery = firestore.collection("transfer")
             .whereEqualTo("receiverID", userUID)
 
+        var dataLoaded = false
+
         userQuery.get().addOnSuccessListener { userSnapshot ->
             for (doc in userSnapshot.documents) {
                 val transferModel = doc.toObject(TransferModel::class.java)
                 if (transferModel != null) {
+                    loadingBar.HideDialog()
                     mDataList.add(transferModel)
+                    dataLoaded = true
                 }
             }
 
@@ -70,7 +75,7 @@ class TransferHistoryActivity : AppCompatActivity() {
                     if (transferModel != null && !mDataList.contains(transferModel)) {
                         loadingBar.HideDialog()
                         mDataList.add(transferModel)
-
+                        dataLoaded = true
                     }
                 }
 
@@ -78,6 +83,9 @@ class TransferHistoryActivity : AppCompatActivity() {
                 mDataList.sortByDescending { it.timestamp }
 
                 adapter.notifyDataSetChanged()
+                if (!dataLoaded) {
+                    loadingBar.HideDialog()
+                }
             }.addOnFailureListener { e ->
                 loadingBar.HideDialog()
                 Log.e("Firestore Error", "Error fetching receiver documents: ${e.message}")

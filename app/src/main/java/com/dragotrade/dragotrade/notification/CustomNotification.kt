@@ -81,6 +81,7 @@ class CustomNotification constructor(private var context: Context) {
             Constants.KEY_TIMESTAMP to currentTimestamp.toString(),
             Constants.KEY_DATE to getCurrentDate().toString(),
             Constants.KEY_TIME to getTimeWithAmPm().toString(),
+            Constants.KEY_STATUS to "Unchecked",
         )
         firestore.collection(Constants.COLLECTION_USER).document(userUID)
             .collection("notification")

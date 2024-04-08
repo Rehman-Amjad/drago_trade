@@ -38,7 +38,7 @@
             android:fontFamily="@font/poppins_bold"
             android:textSize="16sp"
             android:layout_marginTop="10dp"
-            android:text="Copy this Wallet Address to deposit to deposit your payment"
+            android:text="Copy this Wallet Address to deposit your payment"
             android:textColor="@color/white"
             />
     </LinearLayout>
@@ -69,6 +69,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:visibility="gone"
             android:id="@+id/ll_copypayid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

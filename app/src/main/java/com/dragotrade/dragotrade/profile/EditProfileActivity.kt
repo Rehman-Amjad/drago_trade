@@ -40,7 +40,15 @@ class EditProfileActivity : AppCompatActivity() {
 
         binding.name.text = preferenceManager.getString(Constants.KEY_FULLNAME)
         binding.email.text = preferenceManager.getString(Constants.KEY_EMAIL)
-        binding.password.text = preferenceManager.getString(Constants.KEY_PASSWORD)
+
+        val isPassword = preferenceManager.getString(Constants.KEY_PASSWORD)
+
+        if (isPassword == "null"){
+            binding.llPassword.visibility = View.GONE
+        }else{
+            binding.password.text = isPassword
+        }
+
         binding.edPhone.setText(preferenceManager.getString(Constants.KEY_PHONE_NUMBER))
 
         if (preferenceManager.getString(Constants.KEY_PROFILE_PIC)!=null &&

@@ -8,12 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dragotrade.dragotrade.R
 import com.dragotrade.dragotrade.adapter.AnnouncementAdapter
-import com.dragotrade.dragotrade.adapter.NotificationAdapter
 import com.dragotrade.dragotrade.databinding.FragmentAnnouncementBinding
 import com.dragotrade.dragotrade.model.AnnouncementModel
-import com.dragotrade.dragotrade.model.NotificationModel
 import com.dragotrade.dragotrade.utils.Constants
 import com.dragotrade.dragotrade.utils.PreferenceManager
 import com.google.firebase.auth.FirebaseAuth
@@ -44,6 +41,7 @@ class AnnouncementFragment : Fragment() {
         firestore = FirebaseFirestore.getInstance()
         firebaseAuth = FirebaseAuth.getInstance()
         userUID = firebaseAuth.currentUser?.uid.toString()
+        preferenceManager = PreferenceManager.getInstance(requireContext())
 
         annoucementData()
         return  binding.root
@@ -57,8 +55,9 @@ class AnnouncementFragment : Fragment() {
         mDataList = arrayListOf<AnnouncementModel>()
         adapter = activity?.let { AnnouncementAdapter(mDataList, it) }!!
         binding.recyclerView.adapter = adapter
+
         firestore.collection(Constants.COLLECTION_ANNOUNCEMENT)
-//            .orderBy(Constants.KEY_TIMESTAMP, Query.Direction.ASCENDING)
+            .orderBy("timeStamp", Query.Direction.DESCENDING)
             .addSnapshotListener(object : EventListener<QuerySnapshot> {
                 @SuppressLint("NotifyDataSetChanged")
                 override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?)

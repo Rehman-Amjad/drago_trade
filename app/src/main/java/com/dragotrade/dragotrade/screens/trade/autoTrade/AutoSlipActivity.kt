@@ -1,15 +1,10 @@
-package com.dragotrade.dragotrade.screens.trade
+package com.dragotrade.dragotrade.screens.trade.autoTrade
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.dragotrade.dragotrade.MainActivity
-import com.dragotrade.dragotrade.R
 import com.dragotrade.dragotrade.databinding.ActivityAutoSlipBinding
-import com.dragotrade.dragotrade.databinding.ActivityWithdrawSlipBinding
 
 class AutoSlipActivity : AppCompatActivity() {
 

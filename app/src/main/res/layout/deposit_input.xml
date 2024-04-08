@@ -102,7 +102,7 @@
         android:layout_height="50dp"
         android:background="@drawable/edit_grey_background"
         android:layout_marginTop="5dp"
-        android:hint="Enter Binance ID"
+        android:hint="Enter Your Wallet Address."
         android:textSize="12sp"
         android:fontFamily="@font/poppins"
         android:drawablePadding="10dp"

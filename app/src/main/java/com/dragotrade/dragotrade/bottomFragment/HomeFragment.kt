@@ -1,5 +1,6 @@
 package com.dragotrade.dragotrade.bottomFragment
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -7,21 +8,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.dragotrade.dragotrade.R
-import com.dragotrade.dragotrade.TestActivity
+import com.dragotrade.dragotrade.adapter.NotificationAdapter
 import com.dragotrade.dragotrade.databinding.FragmentHomeBinding
+import com.dragotrade.dragotrade.model.NotificationModel
 import com.dragotrade.dragotrade.screens.deposit.DepositActivity
 import com.dragotrade.dragotrade.screens.deposit.DepositHistoryActivity
 import com.dragotrade.dragotrade.notification.NotificationActivity
-import com.dragotrade.dragotrade.screens.trade.AutoTradingActivity
-import com.dragotrade.dragotrade.screens.trade.HighTradingActivity
+import com.dragotrade.dragotrade.screens.trade.autoTrade.AutoTradingActivity
+import com.dragotrade.dragotrade.screens.trade.highTrade.HighTradingActivity
 import com.dragotrade.dragotrade.screens.transfer.TransferActivity
 import com.dragotrade.dragotrade.screens.wallet.WalletActivity
 import com.dragotrade.dragotrade.screens.withdraw.WithdrawActivity
 import com.dragotrade.dragotrade.utils.Constants
 import com.dragotrade.dragotrade.utils.PreferenceManager
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentChange
+import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.QuerySnapshot
 
 
 class HomeFragment : Fragment(),View.OnClickListener {
@@ -29,6 +37,9 @@ class HomeFragment : Fragment(),View.OnClickListener {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var preferenceManager: PreferenceManager
     private lateinit var userUID : String
+
+    lateinit var adapter : NotificationAdapter
+    private lateinit var mDataList : ArrayList<NotificationModel>
 
     private lateinit var firestore: FirebaseFirestore
     private lateinit var firebaseAuth: FirebaseAuth
@@ -54,6 +65,11 @@ class HomeFragment : Fragment(),View.OnClickListener {
 
         inits()
         findBalance()
+        notificationListData()
+
+        binding.imgReload.setOnClickListener{
+            findBalance()
+        }
 
     }
 
@@ -71,9 +87,9 @@ class HomeFragment : Fragment(),View.OnClickListener {
                 if (documentSnapshot.exists()) {
                     // Document exists, retrieve data
                     val walletData = documentSnapshot.data
-                    val balance = walletData?.get(Constants.KEY_BALANCE).toString()
+                    val balance = walletData?.get(Constants.KEY_BALANCE)?.toString()?.toDoubleOrNull()
 
-                    binding.tvBalance.text = balance
+                    binding.tvBalance.text = String.format("%.2f", balance)
 
                 } else {
                     // Document doesn't exist
@@ -88,7 +104,8 @@ class HomeFragment : Fragment(),View.OnClickListener {
     }
 
     private fun setListener() {
-        binding.notificationImage.setOnClickListener(this)
+        binding.notificationImage.notification.setOnClickListener(this)
+//        binding.notificationImage.setOnClickListener(this)
         binding.depositButton.setOnClickListener(this)
         binding.includeMenu.llDeposit.setOnClickListener(this)
         binding.includeMenu.llHistory.setOnClickListener(this)
@@ -115,11 +132,30 @@ class HomeFragment : Fragment(),View.OnClickListener {
             R.id.auto_button -> startActivity(Intent(requireContext(), AutoTradingActivity::class.java))
             R.id.high_button -> startActivity(Intent(requireContext(), HighTradingActivity::class.java))
 
-            R.id.ll_auto -> startActivity(Intent(requireContext(), TestActivity::class.java))
+            R.id.ll_auto -> startActivity(Intent(requireContext(), AutoTradingActivity::class.java))
             R.id.ll_high -> startActivity(Intent(requireContext(), HighTradingActivity::class.java))
-
-            R.id.img_reload -> findBalance()
         }
     }
+
+    private fun notificationListData() {
+        mDataList = arrayListOf<NotificationModel>()
+
+        firestore.collection(Constants.COLLECTION_USER)
+            .document(userUID)
+            .collection("notification")
+            .orderBy(Constants.KEY_TIMESTAMP, Query.Direction.ASCENDING)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    mDataList.add(document.toObject(NotificationModel::class.java))
+                }
+//                binding.tvNotification.text = mDataList.size.toString()
+                binding.notificationImage.tvCount.text = mDataList.size.toString()
+            }
+            .addOnFailureListener { e ->
+                Log.e("Firestore Error", "Error getting documents: ", e)
+            }
+    }
+
 
 }

@@ -8,7 +8,7 @@
     android:background="@color/second_color"
     android:orientation="vertical"
     android:scrollbars="none"
-    tools:context=".screens.trade.AutoTradingActivity">
+    tools:context=".screens.trade.autoTrade.AutoTradingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,17 +27,37 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:textAlignment="textStart"
-                android:fontFamily="@font/poppins_medium"
-                android:layout_marginTop="10dp"
-                android:text="Total Balance (USD)"
-                />
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAlignment="textStart"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginTop="10dp"
+                    android:text="Total Balance (USD)"
+                    />
+                <TextView
+                    android:id="@+id/tv_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAlignment="textStart"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginTop="10dp"
+                    android:text="History"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -68,20 +88,19 @@
                     android:layout_weight="2"
                     android:text=" 0"
                     />
-
-                <Button
-                    android:id="@+id/deposit_button"
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@drawable/button_background"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="Deposit"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    />
             </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_pending"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:textAlignment="textStart"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text=""
+                    />
             <ImageView
                 android:id="@+id/graph"
                 android:layout_width="match_parent"
@@ -165,6 +184,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical"
                 android:background="@drawable/round_grey_background">
                 <LinearLayout
@@ -185,7 +205,7 @@
                         android:textColor="@color/white"
                         />
                     <TextView
-                        android:id="@+id/tv_date"
+                        android:id="@+id/tv_day"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -287,7 +307,7 @@
                         android:textColor="@color/white"
                         />
                     <TextView
-                        android:id="@+id/profit"
+                        android:id="@+id/tv_profit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

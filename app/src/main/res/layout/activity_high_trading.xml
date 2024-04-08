@@ -8,7 +8,7 @@
     android:background="@color/second_color"
     android:orientation="vertical"
     android:scrollbars="none"
-    tools:context=".screens.trade.HighTradingActivity">
+    tools:context=".screens.trade.highTrade.HighTradingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <include
-            android:id="@+id/include_back"
+            android:id="@+id/backLayout"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             layout="@layout/back_layout"
@@ -27,16 +27,36 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20dp">
-            <TextView
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:textAlignment="textStart"
-                android:fontFamily="@font/poppins_medium"
-                android:layout_marginTop="10dp"
-                android:text="Total Balance (USD)"
-                />
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAlignment="textStart"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginTop="10dp"
+                    android:text="Total Balance (USD)"
+                    />
+                <TextView
+                    android:id="@+id/tv_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAlignment="textStart"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginTop="10dp"
+                    android:text="History"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
 
 
             <LinearLayout
@@ -70,6 +90,7 @@
                     />
 
                 <Button
+                    android:visibility="gone"
                     android:id="@+id/deposit_button"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
@@ -84,6 +105,7 @@
             </LinearLayout>
 
             <TextView
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
@@ -176,461 +198,14 @@
                 android:visibility="invisible"/>
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:weightSum="3"
-            android:orientation="horizontal"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/poppins"
-                    android:text="Adidas"
-                    android:layout_marginLeft="10dp"
-                    />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:textAlignment="center"
-                    android:fontFamily="@font/poppins"
-                    android:text="323.7"/>
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:weightSum="2"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:background="@color/green"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="10dp"
-                    android:text="Buy"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:background="@color/red"
-                    android:layout_weight="1"
-                    android:text="Sell"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#97B4B1B1"
-            android:layout_below="@+id/dateTime"
-            android:layout_marginTop="10dp"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:weightSum="3"
-            android:orientation="horizontal"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/poppins"
-                    android:text="Daraz"
-                    android:layout_marginLeft="10dp"
-                    />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:textAlignment="center"
-                    android:fontFamily="@font/poppins"
-                    android:text="0.4611"/>
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:weightSum="2"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:background="@color/green"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="10dp"
-                    android:text="Buy"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:background="@color/red"
-                    android:layout_weight="1"
-                    android:text="Sell"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#97B4B1B1"
-            android:layout_below="@+id/dateTime"
-            android:layout_marginTop="10dp"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:weightSum="3"
-            android:orientation="horizontal"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/poppins"
-                    android:text="Shopify"
-                    android:layout_marginLeft="10dp"
-                    />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:textAlignment="center"
-                    android:fontFamily="@font/poppins"
-                    android:text="46,688.07"/>
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:weightSum="2"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:background="@color/green"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="10dp"
-                    android:text="Buy"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:background="@color/red"
-                    android:layout_weight="1"
-                    android:text="Sell"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#97B4B1B1"
-            android:layout_below="@+id/dateTime"
-            android:layout_marginTop="10dp"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:weightSum="3"
-            android:orientation="horizontal"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/poppins"
-                    android:text="Amazon"
-                    android:layout_marginLeft="10dp"
-                    />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:textAlignment="center"
-                    android:fontFamily="@font/poppins"
-                    android:text="0.4589"/>
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:weightSum="2"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:background="@color/green"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="10dp"
-                    android:text="Buy"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:background="@color/red"
-                    android:layout_weight="1"
-                    android:text="Sell"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#97B4B1B1"
-            android:layout_below="@+id/dateTime"
-            android:layout_marginTop="10dp"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:weightSum="3"
-            android:orientation="horizontal"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:textAlignment="textStart"
-                    android:fontFamily="@font/poppins"
-                    android:text="Alibaba"
-                    android:layout_marginLeft="10dp"
-                    />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:textAlignment="center"
-                    android:fontFamily="@font/poppins"
-                    android:text="0.5230"/>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:weightSum="2"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:background="@color/green"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="10dp"
-                    android:text="Buy"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:background="@color/red"
-                    android:layout_weight="1"
-                    android:text="Sell"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#97B4B1B1"
-            android:layout_below="@+id/dateTime"
-            android:layout_marginTop="10dp"
-            />
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="3dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="visible"
+            tools:listitem="@layout/brand_list_layout" />
 
     </LinearLayout>
 

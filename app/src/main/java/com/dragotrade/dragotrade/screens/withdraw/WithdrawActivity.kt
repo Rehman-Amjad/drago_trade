@@ -62,9 +62,9 @@ class WithdrawActivity : AppCompatActivity() , View.OnClickListener{
                 if (documentSnapshot.exists()) {
                     // Document exists, retrieve data
                     val walletData = documentSnapshot.data
-                    val balance = walletData?.get(Constants.KEY_BALANCE).toString()
+                    val balance = walletData?.get(Constants.KEY_BALANCE)?.toString()?.toDoubleOrNull()
 
-                    binding.tvBalance.text = balance
+                    binding.tvBalance.text = String.format("%.2f", balance)
 
                 } else {
                     // Document doesn't exist
@@ -108,13 +108,13 @@ class WithdrawActivity : AppCompatActivity() , View.OnClickListener{
                         Toast.makeText(this@WithdrawActivity,"Please select withdraw method", Toast.LENGTH_SHORT).show()
                     }
                     "Binance" -> {
-                        binding.includeDepositInput.binanceID.hint = "Enter Binance ID"
+//                        binding.includeDepositInput.binanceID.hint = "Enter Binance ID"
                         binding.includeDepositInput.binanceTitle.text = "Binance ID"
                         withdrawMethod = "Binance ID"
                         binding.withdrawButton.isEnabled = true
                         // binding.myCashTv.visibility = View.VISIBLE
                     } "OKX" -> {
-                    binding.includeDepositInput.binanceID.hint = "Enter OKX ID"
+//                    binding.includeDepositInput.binanceID.hint = "Enter OKX ID"
                     binding.includeDepositInput.binanceTitle.text = "OKX ID"
                     withdrawMethod = "OKX"
                     binding.withdrawButton.isEnabled = true

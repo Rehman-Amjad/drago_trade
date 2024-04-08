@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="@drawable/edit_grey_background"
+            >
+<!--            <ImageView-->
+<!--                android:id="@+id/close_button"-->
+<!--                android:layout_width="25dp"-->
+<!--                android:layout_height="25dp"-->
+<!--                android:src="@drawable/ic_close"-->
+<!--                android:layout_gravity="end"-->
+<!--                />-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_congrats"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/app_color"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="20dp"
+                android:text="Congratulations!"
+                />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/app_color"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="10dp"
+                android:text="Your Trade is completed"
+                />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                android:layout_below="@+id/dateTime"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/app_color"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="20dp"
+                android:text="Happy Earning!"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

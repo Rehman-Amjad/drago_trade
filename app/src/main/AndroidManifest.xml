@@ -27,6 +27,18 @@
         android:theme="@style/Theme.DragoTrade"
         tools:targetApi="31">
         <activity
+            android:name=".screens.trade.highTrade.HighTradeHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.trade.highTrade.HighSlipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.trade.highTrade.ConfirmTradeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.trade.autoTrade.TradeHistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".screens.transfer.TransferSlipActivity"
             android:exported="false" />
         <activity
@@ -36,13 +48,13 @@
             android:name=".start.fotgot_verification.GoToGmailActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.trade.HighTradingActivity"
+            android:name=".screens.trade.highTrade.HighTradingActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.trade.AutoSlipActivity"
+            android:name=".screens.trade.autoTrade.AutoSlipActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.trade.AutoTradingActivity"
+            android:name=".screens.trade.autoTrade.AutoTradingActivity"
             android:exported="false" />
         <activity
             android:name=".screens.wallet.WalletActivity"
@@ -127,7 +139,8 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false" /><activity
+            android:exported="false" />
+        <activity
             android:name=".TestActivity"
             android:exported="false" />
     </application>
