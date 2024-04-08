@@ -12,6 +12,7 @@ class ChatModel {
     var fullName : String?=null
     var userUID : String?=null
     var username : String?=null
+    var imageUrl : String?=null
 
 
 

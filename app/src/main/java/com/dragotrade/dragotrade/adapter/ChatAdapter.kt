@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -32,12 +33,7 @@ class ChatAdapter(private val mDataList : ArrayList<ChatModel>, val context: Con
         holder.ll_my.visibility = View.GONE
 
         if (chat.type.equals("admin")) {
-//            if (model.getImageUrl().equals("")) {
-//                holder.my_image.setVisibility(View.GONE)
-//            } else {
-//                holder.my_image.setVisibility(View.VISIBLE)
-//                Glide.with(context).load(model.getImageUrl()).into(holder.my_image)
-//            }
+
             holder.ll_other.visibility = View.VISIBLE
             holder.tv_other.text = chat.message
             holder.tv_other_time.text = chat.timestamp?.toLong()
@@ -46,12 +42,12 @@ class ChatAdapter(private val mDataList : ArrayList<ChatModel>, val context: Con
         }
 
         if (chat.type.equals("user")) {
-//            if (model.getImageUrl().equals("")) {
-//                holder.my_image.setVisibility(View.GONE)
-//            } else {
-//                holder.my_image.setVisibility(View.VISIBLE)
-//                Glide.with(context).load(model.getImageUrl()).into(holder.my_image)
-//            }
+            if (chat.imageUrl.equals("")) {
+                holder.my_image.setVisibility(View.GONE)
+            } else {
+                holder.my_image.setVisibility(View.VISIBLE)
+                Glide.with(context).load(chat.imageUrl).into(holder.my_image)
+            }
             holder.ll_my.visibility = View.VISIBLE
             holder.tv_my.text = chat.message
             holder.tv_my_time.text = chat.timestamp?.toLong()
@@ -74,5 +70,6 @@ class ChatAdapter(private val mDataList : ArrayList<ChatModel>, val context: Con
         val tv_my_date : TextView = itemView.findViewById(R.id.tv_my_date)
         val ll_other : LinearLayout = itemView.findViewById(R.id.ll_other)
         val ll_my : LinearLayout = itemView.findViewById(R.id.ll_my)
+        val my_image : ImageView = itemView.findViewById(R.id.my_image)
     }
 }
