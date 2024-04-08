@@ -49,6 +49,9 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var signInRequest : BeginSignInRequest
+
+    private var refName: String = ""
+
     companion object {
         private const val RC_SIGN_IN = 123
         private const val TAG = "GoogleActivity"
@@ -75,6 +78,8 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         binding.tvUsername.text = "Referral ID: " + generateRandomReferralCode()
         binding.signupButton.setOnClickListener(this)
         binding.googleButton.setOnClickListener(this)
+        refName = intent.getStringExtra(Constants.INTENT_KEY_LINK_REF).toString()
+        binding.edReferralCode.setText(refName)
     }
 
     private fun showMessage(message: String) {

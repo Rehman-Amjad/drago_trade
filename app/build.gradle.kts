@@ -85,6 +85,10 @@ dependencies {
     //lottie animation
     implementation("com.airbnb.android:lottie:6.1.0")
 
+    implementation ("com.google.firebase:firebase-dynamic-links-ktx:21.1.0")
+
+
+
     //Graph
 //    implementation("co.yml:ycharts:2.1.0")
 }

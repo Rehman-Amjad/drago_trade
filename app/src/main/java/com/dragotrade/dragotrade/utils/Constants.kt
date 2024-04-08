@@ -3,6 +3,11 @@ package com.dragotrade.dragotrade.utils
 open class Constants {
     companion object {
 
+        const val LINK_BASE_URL = "https://dragotrade.page.link/"
+        const val WEBSITE_LINK = "https://www.sparkapp.online/"
+        const val WEBSITE_LINK_DOWNLOAD_PAGE = "https://sparkapp.online/download-spark-apk/"
+        const val INTENT_KEY_LINK_REF = "linkReferral"
+
         const val KEY_PREFERENCE_NAME = "waomeAppPreference"
         const val COLLECTION_USER = "users"
         const val COLLECTION_DEPOSIT = "deposit"
